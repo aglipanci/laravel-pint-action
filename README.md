@@ -16,7 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v1
-        - uses: aglipanci/laravel-pint-action@main
+        - name: "laravel-pint"
+          uses: aglipanci/laravel-pint-action@0.1.0
+          with:
+            preset: laravel
+            verboseMode: true
+            testMode: true
+            configPath: "vendor/my-company/coding-style/pint.json"
+          
 ```
 
 If provided, a `pint.json` file in the root will be used for configuration during run of the Action.
