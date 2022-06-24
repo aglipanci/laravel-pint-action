@@ -1,0 +1,30 @@
+name: 'Laravel Pint'
+description: 'Laravel Pint is an opinionated PHP code style fixer for minimalists.'
+author: 'Agli Panci <agli.panci@gmail.com>'
+inputs:
+  testMode:
+    description: "would you like to run Pint on test mode"
+    required: false
+
+  verboseMode:
+    description: "would you like to run Pint on verbose mode"
+    required: false
+
+  configPath:
+    description: "specify the custom config path"
+    required: false
+
+  preset:
+    description: "pint preset"
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.test-mode }}
+    - ${{ inputs.verbose-mode }}
+    - ${{ inputs.config-path }}
+    - ${{ inputs.preset }}
+branding:
+  icon: 'eye'  
+  color: 'gray-dark'
