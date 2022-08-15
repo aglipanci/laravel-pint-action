@@ -17,7 +17,7 @@ jobs:
     steps:
         - uses: actions/checkout@v1
         - name: "laravel-pint"
-          uses: aglipanci/laravel-pint-action@0.1.0
+          uses: aglipanci/laravel-pint-action@1.0.0
           with:
             preset: laravel
             verboseMode: true
@@ -27,6 +27,8 @@ jobs:
 ```
 If provided, a `pint.json` file in the root will be used for configuration during run of the Action.
 
-This action **DOESN'T** commit changes automatically. If you want to achieve such behaviour you have to use it in combination with another action like [git-auto-commit Action](https://github.com/stefanzweifel/git-auto-commit-action) or [Create Pull Request Action](https://github.com/marketplace/actions/create-pull-request)
+This action **DOESN'T** commit changes automatically. If you want to achieve such behaviour you have to use it in combination with another action like [git-auto-commit Action](https://github.com/stefanzweifel/git-auto-commit-action) or [Create Pull Request Action](https://github.com/marketplace/actions/create-pull-request).
+
+You can see Laravel Pint Action running on my [demo repository](https://github.com/aglipanci/laravel-pint-action-demo/pulls).
 
 
