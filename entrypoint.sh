@@ -3,9 +3,9 @@ set -e
 
 pint_install_command=("composer global require laravel/pint:PINT_VERSION --no-progress --dev")
 
-if [[ "${INPUT_PINT_VERSION}" ]]
+if [[ "${INPUT_PINTVERSION}" ]]
 then
- pint_install_command="${pint_install_command/PINT_VERSION/${INPUT_PINT_VERSION}}"
+ pint_install_command="${pint_install_command/PINT_VERSION/${INPUT_PINTVERSION}}"
 else
  pint_install_command="${pint_install_command/:PINT_VERSION/}"
 fi
