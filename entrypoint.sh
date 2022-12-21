@@ -19,6 +19,9 @@ if [[ "${INPUT_PRESET}" ]]; then
   command_string+=" --preset ${INPUT_PRESET}"
 fi
 
+composer global require laravel/pint --no-progress --dev
+PATH="/tmp/vendor/bin:${PATH}"
+
 echo "Running Command: " "${command_string[@]}"
 
 ${command_string[@]}
