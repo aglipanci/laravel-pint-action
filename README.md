@@ -17,7 +17,7 @@ jobs:
     steps:
         - uses: actions/checkout@v1
         - name: "laravel-pint"
-          uses: aglipanci/laravel-pint-action@1.0.0
+          uses: aglipanci/laravel-pint-action@2.0.0
           with:
             preset: laravel
             verboseMode: true
