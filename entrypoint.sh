@@ -12,11 +12,11 @@ fi
 
 pint_command=("pint")
 
-if [[ "${INPUT_TESTMODE}" ]]; then
+if [[ "${INPUT_TESTMODE}" == true ]]; then
   pint_command+=" --test"
 fi
 
-if [[ "${INPUT_VERBOSEMODE}" ]]; then
+if [[ "${INPUT_VERBOSEMODE}" == true ]]; then
   pint_command+=" -v"
 fi
 
