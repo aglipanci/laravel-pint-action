@@ -28,6 +28,10 @@ if [[ "${INPUT_PRESET}" ]]; then
   pint_command+=" --preset ${INPUT_PRESET}"
 fi
 
+if [[ "${INPUT_ONLYDIRTY}" ]]; then
+  pint_command+=" --dirty"
+fi
+
 echo "Running Command: " "${pint_install_command[@]}"
 
 ${pint_install_command[@]}
