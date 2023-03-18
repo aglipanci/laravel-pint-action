@@ -17,9 +17,13 @@ inputs:
   preset:
     description: "pint preset"
     required: false
+
+  onlyDirty:
+    description: "only format changed files"
+    required: false
     
   pintVersion:
-    description: "larave/pint composer version to install a specific version."
+    description: "laravel/pint composer version to install a specific version."
     required: false
 runs:
   using: 'docker'
@@ -29,6 +33,7 @@ runs:
     - ${{ inputs.verbose-mode }}
     - ${{ inputs.config-path }}
     - ${{ inputs.preset }}
+    - ${{ inputs.only-dirty }}
     - ${{ inputs.pint-version }}
 branding:
   icon: 'eye'  
