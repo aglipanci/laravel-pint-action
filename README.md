@@ -24,6 +24,7 @@ jobs:
             testMode: true
             configPath: "vendor/my-company/coding-style/pint.json"
             pintVersion: 1.2.1
+            onlyDirty: true
           
 ```
 ℹ️ Starting from version 2 you can specify the Pint version to be used by specifyling a `pintVersion` in your configuration file.
