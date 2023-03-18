@@ -10,16 +10,16 @@ inputs:
     description: "would you like to run Pint on verbose mode"
     required: false
 
-  onlyDirty:
-    description: "only format changed files"
-    required: false
-
   configPath:
     description: "specify the custom config path"
     required: false
 
   preset:
     description: "pint preset"
+    required: false
+
+  onlyDirty:
+    description: "only format changed files"
     required: false
     
   pintVersion:
