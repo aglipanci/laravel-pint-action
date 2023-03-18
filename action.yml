@@ -33,6 +33,7 @@ runs:
     - ${{ inputs.verbose-mode }}
     - ${{ inputs.config-path }}
     - ${{ inputs.preset }}
+    - ${{ inputs.only-dirty }}
     - ${{ inputs.pint-version }}
 branding:
   icon: 'eye'  
