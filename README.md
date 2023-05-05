@@ -23,7 +23,7 @@ jobs:
             verboseMode: true
             testMode: true
             configPath: "vendor/my-company/coding-style/pint.json"
-            pintVersion: 1.2.1
+            pintVersion: 1.8.0
             onlyDirty: true
           
 ```
