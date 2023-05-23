@@ -27,7 +27,7 @@ inputs:
     required: false
    
   useComposer:
-    description: "Use Laravel Pint version from project composer lock file."
+    description: "Use Laravel Pint version from project composer lock file. Lock file must be preset to use this flag."
     required: false
 runs:
   using: 'docker'
