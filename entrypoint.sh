@@ -6,6 +6,9 @@ pint_install_command=("composer global require laravel/pint:PINT_VERSION --no-pr
 if [[ "${INPUT_PINTVERSION}" ]]
 then
  pint_install_command="${pint_install_command/PINT_VERSION/${INPUT_PINTVERSION}}"
+elif  [[ "${INPUT_USECOMPOSER}" ]]
+then
+ pint_install_command="${pint_install_command/PINT_VERSION/$(composer show --locked | grep 'laravel/pint' | awk '{print $2}')}"
 else
  pint_install_command="${pint_install_command/:PINT_VERSION/}"
 fi

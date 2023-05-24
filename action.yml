@@ -25,6 +25,10 @@ inputs:
   pintVersion:
     description: "laravel/pint composer version to install a specific version."
     required: false
+   
+  useComposer:
+    description: "Use Laravel Pint version from project composer lock file. Lock file must be preset to use this flag."
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -35,6 +39,7 @@ runs:
     - ${{ inputs.preset }}
     - ${{ inputs.only-dirty }}
     - ${{ inputs.pint-version }}
+    - ${{ inputs.use-composer }}
 branding:
   icon: 'eye'  
   color: 'gray-dark'
