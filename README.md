@@ -27,7 +27,7 @@ jobs:
             onlyDirty: true
           
 ```
-ℹ️ Starting from version 2 you can specify the Pint version to be used by specifyling a `pintVersion` in your configuration file.
+ℹ️ Starting from version 2 you can specify the Pint version to be used by specifying a `pintVersion` in your configuration file.
 
 If provided, a `pint.json` file in the root will be used for configuration during run of the Action.
 
