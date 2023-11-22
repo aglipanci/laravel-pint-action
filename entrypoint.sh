@@ -31,7 +31,7 @@ if [[ "${INPUT_PRESET}" ]]; then
   pint_command+=" --preset ${INPUT_PRESET}"
 fi
 
-if [[ "${INPUT_ONLYDIRTY}" ]]; then
+if [[ "${INPUT_ONLYDIRTY}" == true ]]; then
   pint_command+=" --dirty"
 fi
 
