@@ -1,4 +1,3 @@
-# https://github.com/marketplace/actions/actions-tagger
 name: release
 
 "on":
@@ -11,5 +10,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: Actions-R-Us/actions-tagger@latest
-      with:
+        with:
           publish_latest_tag: true
