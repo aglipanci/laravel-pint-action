@@ -21,6 +21,10 @@ inputs:
   onlyDirty:
     description: "only format changed files"
     required: false
+
+  onlyDiff:
+    description: "only format changed files that differ from the provided branch"
+    required: false
     
   pintVersion:
     description: "laravel/pint composer version to install a specific version."

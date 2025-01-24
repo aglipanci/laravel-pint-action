@@ -31,6 +31,11 @@ if [[ "${INPUT_PRESET}" ]]; then
   pint_command+=" --preset ${INPUT_PRESET}"
 fi
 
+if [[ "${INPUT_ONLYDIFF}" ]]; then
+  pint_command+=" --diff=${INPUT_ONLYDIFF}"
+  INPUT_ONLYDIRTY=false
+fi
+
 if [[ "${INPUT_ONLYDIRTY}" == true ]]; then
   pint_command+=" --dirty"
 fi
