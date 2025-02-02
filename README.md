@@ -6,9 +6,9 @@ GitHub Action implementation of the [Laravel Pint](https://github.com/laravel/pi
 
 Use with [GitHub Actions](https://github.com/features/actions)
 
-_.github/workflows/pint.yml
+`_.github/workflows/pint.yml`
 
-```
+```yml
 name: PHP Linting
 on: pull_request
 jobs:
@@ -25,6 +25,7 @@ jobs:
             configPath: "vendor/my-company/coding-style/pint.json"
             pintVersion: 1.8.0
             onlyDirty: true
+            onlyDiff: "main"
           
 ```
 ℹ️ Starting from version 2 you can specify the Pint version to be used by specifying a `pintVersion` in your configuration file.
