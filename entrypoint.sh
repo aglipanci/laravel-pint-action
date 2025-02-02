@@ -31,18 +31,8 @@ if [[ "${INPUT_PRESET}" ]]; then
   pint_command+=" --preset ${INPUT_PRESET}"
 fi
 
-if [[ "${INPUT_ONLYDIFF}" == true ]]; then
-  if [[ -n "${GITHUB_TOKEN}" ]]; then
-    INPUT_ONLYDIFF=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-      "https://api.github.com/repos/${GITHUB_REPOSITORY}" | jq -r .default_branch)
-  else
-    INPUT_ONLYDIFF=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-  fi
-fi
-
 if [[ "${INPUT_ONLYDIFF}" ]]; then
   pint_command+=" --diff=${INPUT_ONLYDIFF}"
-  INPUT_ONLYDIRTY=false
 fi
 
 if [[ "${INPUT_ONLYDIRTY}" == true ]]; then
