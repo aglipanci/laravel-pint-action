@@ -25,7 +25,7 @@ jobs:
             configPath: "vendor/my-company/coding-style/pint.json"
             pintVersion: 1.8.0
             onlyDirty: true
-            # onlyDiff: "origin/main"
+            onlyDiff: "main"
           
 ```
 ℹ️ Starting from version 2 you can specify the Pint version to be used by specifying a `pintVersion` in your configuration file.
