@@ -54,6 +54,11 @@ if [[ "${INPUT_PARALLEL}" == true ]]; then
   fi
 fi
 
-echo "Running Command:  ${pint_command[@]}"
+echo "Running Command: " "${pint_install_command[@]}"
 
-"${pint_command[@]}"
+${pint_install_command[@]}
+PATH="/tmp/vendor/bin:${PATH}"
+
+echo "Running Command: " "${pint_command[@]}"
+
+${pint_command[@]}
