@@ -13,15 +13,13 @@ else
  pint_install_command="${pint_install_command/:PINT_VERSION/}"
 fi
 
-echo "Running Command: " "${pint_install_command[@]}"
+echo "Running Command:  ${pint_install_command[@]}"
 ${pint_install_command[@]}
 PATH="/tmp/vendor/bin:${PATH}"
 
-# Get version after installation
 pint_version=$(pint --version | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
 version_check=$(printf '%s\n1.23' "$pint_version" | sort -V | head -1)
 
-# Build command with consistent array syntax
 pint_command=("pint")
 if [[ "${INPUT_TESTMODE}" == true ]]; then
   pint_command+=(" --test")
@@ -32,11 +30,11 @@ if [[ "${INPUT_VERBOSEMODE}" == true ]]; then
 fi
 
 if [[ "${INPUT_CONFIGPATH}" ]]; then
-  pint_command+=(" --config" "${INPUT_CONFIGPATH}")
+  pint_command+=(" --config ${INPUT_CONFIGPATH}")
 fi
 
 if [[ "${INPUT_PRESET}" ]]; then
-  pint_command+=(" --preset" "${INPUT_PRESET}")
+  pint_command+=(" --preset ${INPUT_PRESET}")
 fi
 
 if [[ "${INPUT_ONLYDIFF}" ]]; then
@@ -56,6 +54,6 @@ if [[ "${INPUT_PARALLEL}" == true ]]; then
   fi
 fi
 
-echo "Running Command: " "${pint_command[@]}"
+echo "Running Command:  ${pint_command[@]}"
 
 "${pint_command[@]}"
