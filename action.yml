@@ -5,31 +5,35 @@ inputs:
   testMode:
     description: "would you like to run Pint on test mode"
     required: false
-
+  
   verboseMode:
     description: "would you like to run Pint on verbose mode"
     required: false
-
+  
   configPath:
     description: "specify the custom config path"
     required: false
-
+  
   preset:
     description: "pint preset"
     required: false
-
+  
   onlyDirty:
     description: "only format changed files"
     required: false
-
+  
   onlyDiff:
     description: "only format changed files that differ from the provided branch"
     required: false
-    
+  
+  parallel:
+    description: "run Pint in parallel mode (requires Pint >= 1.23)"
+    required: false
+  
   pintVersion:
     description: "laravel/pint composer version to install a specific version."
     required: false
-   
+  
   useComposer:
     description: "Use Laravel Pint version from project composer lock file. Lock file must be preset to use this flag."
     required: false
@@ -42,6 +46,8 @@ runs:
     - ${{ inputs.config-path }}
     - ${{ inputs.preset }}
     - ${{ inputs.only-dirty }}
+    - ${{ inputs.only-diff }}
+    - ${{ inputs.parallel }}
     - ${{ inputs.pint-version }}
     - ${{ inputs.use-composer }}
 branding:
