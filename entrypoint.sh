@@ -57,4 +57,5 @@ if [[ "${INPUT_PARALLEL}" == true ]]; then
 fi
 
 echo "Running Command: " "${pint_command[@]}"
+
 "${pint_command[@]}"
