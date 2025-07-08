@@ -22,32 +22,32 @@ version_check=$(printf '%s\n1.23' "$pint_version" | sort -V | head -1)
 
 pint_command=("pint")
 if [[ "${INPUT_TESTMODE}" == true ]]; then
-  pint_command+=(" --test")
+  pint_command+=" --test"
 fi
 
 if [[ "${INPUT_VERBOSEMODE}" == true ]]; then
-  pint_command+=(" -v")
+  pint_command+=" -v"
 fi
 
 if [[ "${INPUT_CONFIGPATH}" ]]; then
-  pint_command+=(" --config ${INPUT_CONFIGPATH}")
+  pint_command+=" --config ${INPUT_CONFIGPATH}"
 fi
 
 if [[ "${INPUT_PRESET}" ]]; then
-  pint_command+=(" --preset ${INPUT_PRESET}")
+  pint_command+=" --preset ${INPUT_PRESET}"
 fi
 
 if [[ "${INPUT_ONLYDIFF}" ]]; then
-  pint_command+=(" --diff=${INPUT_ONLYDIFF}")
+  pint_command+=" --diff=${INPUT_ONLYDIFF}"
 fi
 
 if [[ "${INPUT_ONLYDIRTY}" == true ]]; then
-  pint_command+=(" --dirty")
+  pint_command+=" --dirty"
 fi
 
 if [[ "${INPUT_PARALLEL}" == true ]]; then
   if [[ "$version_check" == "1.23" ]]; then
-    pint_command+=(" --parallel")
+    pint_command+=" --parallel"
     echo "Parallel mode enabled (Pint version: $pint_version)"
   else
     echo "Warning: Parallel mode requested but Pint version $pint_version < 1.23. Skipping --parallel flag."
