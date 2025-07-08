@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# Install Pint
 pint_install_command=("composer global require laravel/pint:PINT_VERSION --no-progress --dev")
 if [[ "${INPUT_PINTVERSION}" ]]
 then
