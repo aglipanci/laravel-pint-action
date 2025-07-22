@@ -53,8 +53,6 @@ if [[ "${INPUT_PARALLEL}" == true ]]; then
   fi
 fi
 
-PATH="/tmp/vendor/bin:${PATH}"
-
 echo "Running Command: " "${pint_command[@]}"
 
 ${pint_command[@]}
