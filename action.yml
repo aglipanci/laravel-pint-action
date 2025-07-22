@@ -46,7 +46,7 @@ runs:
     - ${{ inputs.config-path }}
     - ${{ inputs.preset }}
     - ${{ inputs.only-dirty }}
-    - ${{ inputs.only-diff }}
+    - ${{ inputs.onlyDiff }}
     - ${{ inputs.parallel }}
     - ${{ inputs.pint-version }}
     - ${{ inputs.use-composer }}
