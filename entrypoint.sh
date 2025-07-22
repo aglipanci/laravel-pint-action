@@ -2,7 +2,6 @@
 set -e
 
 pint_install_command=("composer global require laravel/pint:PINT_VERSION --no-progress --dev")
-
 if [[ "${INPUT_PINTVERSION}" ]]
 then
  pint_install_command="${pint_install_command/PINT_VERSION/${INPUT_PINTVERSION}}"
@@ -13,8 +12,14 @@ else
  pint_install_command="${pint_install_command/:PINT_VERSION/}"
 fi
 
-pint_command=("pint")
+echo "Running Command:  ${pint_install_command[@]}"
+${pint_install_command[@]}
+PATH="/tmp/vendor/bin:${PATH}"
 
+pint_version=$(pint --version | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
+version_check=$(printf '%s\n1.23' "$pint_version" | sort -V | head -1)
+
+pint_command=("pint")
 if [[ "${INPUT_TESTMODE}" == true ]]; then
   pint_command+=" --test"
 fi
@@ -39,9 +44,15 @@ if [[ "${INPUT_ONLYDIRTY}" == true ]]; then
   pint_command+=" --dirty"
 fi
 
-echo "Running Command: " "${pint_install_command[@]}"
+if [[ "${INPUT_PARALLEL}" == true ]]; then
+  if [[ "$version_check" == "1.23" ]]; then
+    pint_command+=" --parallel"
+    echo "Parallel mode enabled (Pint version: $pint_version)"
+  else
+    echo "Warning: Parallel mode requested but Pint version $pint_version < 1.23. Skipping --parallel flag."
+  fi
+fi
 
-${pint_install_command[@]}
 PATH="/tmp/vendor/bin:${PATH}"
 
 echo "Running Command: " "${pint_command[@]}"
